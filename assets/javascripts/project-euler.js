@@ -4,6 +4,7 @@ jQuery(function($) {
       link          = $('.link'),
       codeContainer = $('.code-container'),
       problemResult = $('.result'),
+      scriptLink    = $('.script'),
       showCode      = true;
 
   $('button.toggle-code').on('click', function(e) {
@@ -31,12 +32,18 @@ jQuery(function($) {
 
     name.text(self.text());
 
-    var url = 'http://projecteuler.net/problem=' + (self.index() + 1);
-    link.text(url);
-    link.attr('href', url);
+    var problemUrl = 'http://projecteuler.net/problem=' + (self.index() + 1);
+    link.text(problemUrl);
+    link.attr('href', problemUrl);
+
+    var filename  = self.data('name') + '.js';
+    var scriptUrl = 'assets/javascripts/problems/' + filename;
+
+    scriptLink.text(filename);
+    scriptLink.attr('href', scriptUrl);
 
     $.ajax({
-      url: 'assets/javascripts/problems/' + self.data('name') + '.js',
+      url: scriptUrl,
       dataType: 'script',
       cache: true,
       success: function(response) {
