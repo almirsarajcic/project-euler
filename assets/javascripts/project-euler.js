@@ -1,5 +1,7 @@
 jQuery(function($) {
   var main          = $('main'),
+      name          = $('.name'),
+      link          = $('.link'),
       codeContainer = $('.code-container'),
       problemResult = $('.result'),
       showCode      = true;
@@ -26,6 +28,12 @@ jQuery(function($) {
 
   $('aside.problems a').on('click', function(e) {
     var self = $(this);
+
+    name.text(self.text());
+
+    var url = 'http://projecteuler.net/problem=' + (self.index() + 1);
+    link.text(url);
+    link.attr('href', url);
 
     $.ajax({
       url: 'assets/javascripts/problems/' + self.data('name') + '.js',
