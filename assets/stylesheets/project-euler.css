@@ -21,15 +21,10 @@ main {
 .result {
   width: 20%;
   height: 50px;
-  background-color: #000;
   line-height: 50px;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-}
-
-.result:hover {
-  color: #fff;
 }
 
 .code-container {
