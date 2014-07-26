@@ -32,7 +32,7 @@ jQuery(function($) {
 
     name.text(self.text());
 
-    var index = self.index() + 1;
+    var index = self.parent().index() + 1;
 
     var problemUrl = 'http://projecteuler.net/problem=' + index;
     link.text(problemUrl);
