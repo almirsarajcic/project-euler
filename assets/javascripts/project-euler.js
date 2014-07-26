@@ -32,11 +32,13 @@ jQuery(function($) {
 
     name.text(self.text());
 
-    var problemUrl = 'http://projecteuler.net/problem=' + (self.index() + 1);
+    var index = self.index() + 1;
+
+    var problemUrl = 'http://projecteuler.net/problem=' + index;
     link.text(problemUrl);
     link.attr('href', problemUrl);
 
-    var filename  = self.data('name') + '.js';
+    var filename  = index + '-' + self.data('name') + '.js';
     var scriptUrl = 'assets/javascripts/problems/' + filename;
 
     scriptLink.text(filename);
