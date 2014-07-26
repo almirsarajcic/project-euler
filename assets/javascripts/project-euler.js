@@ -33,6 +33,7 @@ jQuery(function($) {
     var self = $(this);
 
     name.text(self.text());
+    problemResult.text('');
 
     var index     = self.parent().index() + 1;
     var problem   = index + '-' + self.data('name');

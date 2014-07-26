@@ -28,8 +28,7 @@ function isPalindrome(number) {
   }
 
   for (j = 0; j < i / 2; j++) {
-    if (digits[j] !== digits[i - j])
-    {
+    if (digits[j] !== digits[i - j]) {
       return false;
     }
   }
